@@ -20,7 +20,29 @@ function getCellElements (currentRowElement) {
 }
 
 
-// YOUR CODE GOES HERE
+// YOUR CODE GOES HERE 
+
+replaceAllButton.onclick = function() {
+    let find = findInput.value;
+    let replace = replaceInput.value;
+
+    for (let i = 0; i < rowElements.length; i += 1) {
+       let currentCellElement = getCellElements(rowElements[i]);
+
+       for (let i = 0; i < currentCellElement.length; i += 1) {
+
+       
+        if (currentCellElement[i].innerHTML.includes(find)) {
+            let newCurrentElement = currentCellElement[i].innerHTML.replace(find, replace);
+
+            currentCellElement[i].innerHTML = newCurrentElement;
+            
+          }
+       }
+    }
+}
+
+
 
 
 // One last thing: dedicate very careful attention to using variables and
